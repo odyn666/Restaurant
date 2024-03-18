@@ -33,10 +33,10 @@ public class AppUserController {
         return ResponseEntity.ok(service.findUserByUsername(username));
     }
 
-    @GetMapping("/find/role")
-    public ResponseEntity<List<AppUserModel>> findUsersByRole(@RequestParam AppUserRole role) {
-        return ResponseEntity.ok(service.findUsersByRole(role));
-    }
+//    @GetMapping("/find/role")
+//    public ResponseEntity<List<AppUserModel>> findUsersByRole(@RequestParam AppUserRole role) {
+//        return ResponseEntity.ok(service.findUsersByRole(role));
+//    }
 
     @PostMapping("/add")
     public ResponseEntity<AppUserModel> addUserToDB(@RequestBody UserRegistrationDto dto) {

@@ -23,7 +23,7 @@ public class AppUserMapper {
                 .lastname(dto.getLastname())
                 .password(dto.getPassword())
                 .email(dto.getEmail())
-                .appUserRole(AppUserRole.USER)
+                .roles(dto.getRole())
                 .creationDate(LocalDateTime.now())
                 .build();
     }
@@ -33,6 +33,7 @@ public class AppUserMapper {
         return UserRegistrationDto.builder()
                 .firstname(model.getFirstname())
                 .lastname(model.getLastname())
+                .role(model.getRoles())
                 .password(model.getPassword())
                 .email(model.getEmail()).build();
     }

@@ -2,8 +2,13 @@ package com.github.odyn666.restaurantreservation.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -13,7 +18,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "reservation")
-public class ReservationModel {
+public class ReservationModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +27,9 @@ public class ReservationModel {
     private List<AppUserModel>reservedBy;
     @OneToOne
     private TableModel reservedTable;
-    private ZonedDateTime reservationDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date reservationDate;
+
 
 }

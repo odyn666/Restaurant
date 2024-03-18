@@ -1,9 +1,13 @@
 package com.github.odyn666.restaurantreservation.dto;
 
 import com.github.odyn666.restaurantreservation.model.AppUserRole;
+import com.github.odyn666.restaurantreservation.model.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+import org.w3c.dom.stylesheets.LinkStyle;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,7 +24,7 @@ public class UserRegistrationDto {
     @NotEmpty
     private String password;
 
-    private AppUserRole role;
+    private List<UserRole> role;
 
     @Email
     @NotEmpty

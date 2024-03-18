@@ -3,7 +3,7 @@ package com.github.odyn666.restaurantreservation.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,7 +21,7 @@ public class TableModel {
     private Short tableNumber;
     private Boolean isReserved;
     @OneToMany(mappedBy = "reservedTable",orphanRemoval = true)
-    private Set<AppUserModel> reservedBy;
+    private List<AppUserModel> reservedBy;
 
 
 }

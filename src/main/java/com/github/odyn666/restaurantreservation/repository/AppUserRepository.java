@@ -11,7 +11,8 @@ public interface AppUserRepository extends JpaRepository<AppUserModel, Long> {
 
     Optional<AppUserModel> findAppUserModelById(Long id);
 
-    Optional<List<AppUserModel>> findAppUserModelByAppUserRole(AppUserRole role);
+    //Optional<List<AppUserModel>> findAppUserModelByAppUserRole(AppUserRole role);
+    //Optional<AppUserModel> findAppUserModelByRoles(String username);
 
     Optional<AppUserModel> findAppUserModelByUsername(String username);
 
